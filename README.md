@@ -9,7 +9,7 @@ Drawio here : [Breakdown Idea](https:///drive.google.com/file/d/16jk5yjFy0tcMC7L
 
 ### Relatives
 - NLP
-- BERT (transformer model)
+- Transformer model
 - KNN (for recommend)
 - Sentiment analysis 
 - POS tagging (Finding Nouns, Adj,...)
@@ -22,7 +22,12 @@ Drawio here : [Breakdown Idea](https:///drive.google.com/file/d/16jk5yjFy0tcMC7L
 
 Number of sequences:  **3624432** => **3.6M** sentences, enough for humanity knowledge. But only work with contents, news,...it's really bad with conversation.
 
+For another one who need a clean file :
+``install gdown 
+using !gdown --id 14gEebiiRN_IHM65cb6pd-YM02FH8rUiV``  #to get the clean dataset from wikimedia (3.6M sentences)
+
 ### another dataset for conversation, chitchat : 
+Loading / 3-12-2020
 
 
 
@@ -62,3 +67,15 @@ The original paper working on Germany to English :https://papers.nips.cc/paper/2
 - another dataset
 - Tuning for better acuracy
 6. Building Flask for Demo
+
+
+## PART 2 : EMOJI RECOMMENDATION
+### 1. Data crawling : Using BS_4 and crawl html parse from emojiall
+### 2. Data label for Pos_tagging using pandas
+### 3. Building a threshold system for :
+- Pos_tagging Noun/Adj...words from sentences
+- Sentiment Analysis for a whole sentence without Noun or Adj.
+
+## PART 3 : FLASK, PIPEPLINE CONNECTION
+
+### LOADING....
