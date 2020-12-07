@@ -1,16 +1,16 @@
-# VTMS-ER
-Vietnamese tone mark support &amp; Emojis recommendation
+# vietnamese tone marks support & emoji recommendation
+
 ###### tags: `NLP` `Recommendation` `Vietnamese` `KNN` `Sentiment Analysis` `Transformer Model`
 
 ## idea :  
 Drawio here : [Breakdown Idea](https:///drive.google.com/file/d/16jk5yjFy0tcMC7L4FGFLJHrv0pZcVLbA/view?usp=sharing)
 
-![](https://i.imgur.com/wMX3vOM.png)
+![](https://i.imgur.com/hCkZByB.png)
+
 
 ### Relatives
 - NLP
-- Transformer model
-- KNN (for recommend)
+- Transformer Model (for language translate)
 - Sentiment analysis 
 - POS tagging (Finding Nouns, Adj,...)
 
@@ -22,12 +22,7 @@ Drawio here : [Breakdown Idea](https:///drive.google.com/file/d/16jk5yjFy0tcMC7L
 
 Number of sequences:  **3624432** => **3.6M** sentences, enough for humanity knowledge. But only work with contents, news,...it's really bad with conversation.
 
-For another one who need a clean file :
-``install gdown 
-using !gdown --id 14gEebiiRN_IHM65cb6pd-YM02FH8rUiV``  #to get the clean dataset from wikimedia (3.6M sentences)
-
 ### another dataset for conversation, chitchat : 
-Loading / 3-12-2020
 
 
 
@@ -56,26 +51,35 @@ it is the same with this tutorials : [translate Portuguese to English](https://w
 The original paper working on Germany to English :https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf
 ![](https://i.imgur.com/2NncMU0.png)
 
+## EMOJI RECOMENDATION System
 
-### Step to go : 
+### 1. Model 2 : Sentiment Analysis
 
-1. Finish 1st model
-2. Turn checkpoint, function, preprocess to ONE => mean for running the next model without train.
-3. Emoji idea, dataset, recommend system (1 or 2 model maybe)
-4. Finish the picepline of project
-5. Optimizer the model
-- another dataset
-- Tuning for better acuracy
-6. Building Flask for Demo
+#### Dataset : UIT-VSMEC (version 1.0) - Vietnamese Social Media Emotion Corpus 
+Standard Vietnamese Social Media Emotion Corpus (UIT-VSMEC) with about 6,927 human-annotated sentences with **six emotion labels**, contributing to **emotion recognition** research in Vietnamese which is a low-resource language in Natural Language Processing (NLP). 
+- Anger
+- Suprise
+- Enjoyment
+- Sadness
+- Fear
+- Disgust
+- Other
 
 
-## PART 2 : EMOJI RECOMMENDATION
-### 1. Data crawling : Using BS_4 and crawl html parse from emojiall
-### 2. Data label for Pos_tagging using pandas
-### 3. Building a threshold system for :
-- Pos_tagging Noun/Adj...words from sentences
-- Sentiment Analysis for a whole sentence without Noun or Adj.
+![](https://i.imgur.com/AavukFp.png)
+#### .The result:
+![](https://i.imgur.com/Ti7w4sq.png)
 
-## PART 3 : FLASK, PIPEPLINE CONNECTION
+I got 88% F1-scored on train dataset.
 
-### LOADING....
+### 2.Model 3 : POS Tagging 
+Output Nouns & Adj (Important Words of a sentences) to findemoji
+
+
+### 3.Emojis dataset:
+
+Using Bs4 to crawling the dataset of emojis.
+
+### 4.Threshold System Explain :  
+
+Vietnamese emoji and description
